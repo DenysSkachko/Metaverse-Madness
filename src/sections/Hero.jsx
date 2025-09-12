@@ -1,0 +1,48 @@
+import { motion } from 'framer-motion'
+import styles from '../styles'
+import { slideIn, staggerContainer, textVariant } from '../utils/motion'
+
+const Hero = () => {
+  return (
+    <section className={`${styles.yPaddings} sm:pl-16 pl-6`}>
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className={`${styles.innerWidth} mx-auto flex flex-col`}
+      >
+        <div className={`${styles.colCenter} relative z-11`}>
+          <motion.h1 variants={textVariant(1.1)} className={styles.heroHeading}>
+            Metaverse
+          </motion.h1>
+          <motion.div variants={textVariant(1.2)} className={styles.flexCenter}>
+            <h1 className={styles.heroHeading}>Ma</h1>
+            <div className={styles.heroDText} />
+            <h1 className={styles.heroHeading}>ness</h1>
+          </motion.div>
+        </div>
+
+        <motion.div
+          variants={slideIn('right', 'tween', 0.2, 1)}
+          className="relative w-full md:-mt-5 -mt-3"
+        >
+          <div className="absolute w-full h-75 hero-gradient rounded-tl-[140px] z-0 -top-7.5" />
+            <img
+              src="/cover.png"
+              alt="cover"
+              className="w-full sm:h-160 h-87.5 object-cover rounded-tl-[140px] z-10 relative"
+            />
+
+            <a href="#explore">
+                <div className="w-full flex justify-end sm:-mt-17.5 -mt-12.5 pr-10 relative z-10">
+                    <img src='./stamp.png' alt="stamp" className="sm:w-40 w-25 sm:h-40 h-25 object-contain" />
+                </div>
+            </a>
+        </motion.div>
+      </motion.div>
+    </section>
+  )
+}
+
+export default Hero

@@ -1,7 +1,7 @@
 export const navVariants = {
   hidden: {
     opacity: 0,
-    y: -50,
+    y: -10,
     transition: {
       type: 'spring',
       stiffness: 300,
@@ -14,10 +14,14 @@ export const navVariants = {
     transition: {
       type: 'spring',
       stiffness: 80,
-      delay: 1,
     },
   },
-};
+}
+
+export const menuVariants = {
+  hidden: { x: '100%' },
+  show: { x: 0, transition: { type: 'tween', duration: 0.3 } },
+}
 
 export const slideIn = (direction, type, delay, duration) => ({
   hidden: {
@@ -34,7 +38,7 @@ export const slideIn = (direction, type, delay, duration) => ({
       ease: 'easeOut',
     },
   },
-});
+})
 
 export const staggerContainer = (staggerChildren, delayChildren) => ({
   hidden: {},
@@ -44,9 +48,9 @@ export const staggerContainer = (staggerChildren, delayChildren) => ({
       delayChildren,
     },
   },
-});
+})
 
-export const textVariant = (delay) => ({
+export const textVariant = delay => ({
   hidden: {
     y: 50,
     opacity: 0,
@@ -60,7 +64,7 @@ export const textVariant = (delay) => ({
       delay,
     },
   },
-});
+})
 
 export const textContainer = {
   hidden: {
@@ -70,7 +74,7 @@ export const textContainer = {
     opacity: 1,
     transition: { staggerChildren: 0.1, delayChildren: i * 0.1 },
   }),
-};
+}
 
 export const textVariant2 = {
   hidden: {
@@ -85,7 +89,7 @@ export const textVariant2 = {
       ease: 'easeIn',
     },
   },
-};
+}
 
 export const fadeIn = (direction, type, delay, duration) => ({
   hidden: {
@@ -104,9 +108,9 @@ export const fadeIn = (direction, type, delay, duration) => ({
       ease: 'easeOut',
     },
   },
-});
+})
 
-export const planetVariants = (direction) => ({
+export const planetVariants = direction => ({
   hidden: {
     x: direction === 'left' ? '-100%' : '100%',
     rotate: 120,
@@ -120,7 +124,7 @@ export const planetVariants = (direction) => ({
       delay: 0.5,
     },
   },
-});
+})
 
 export const zoomIn = (delay, duration) => ({
   hidden: {
@@ -137,7 +141,7 @@ export const zoomIn = (delay, duration) => ({
       ease: 'easeOut',
     },
   },
-});
+})
 
 export const footerVariants = {
   hidden: {
@@ -158,4 +162,4 @@ export const footerVariants = {
       delay: 0.5,
     },
   },
-};
+}

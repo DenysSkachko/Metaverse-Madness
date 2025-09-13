@@ -7,7 +7,7 @@ import InsightCard from '../components/InsightCard'
 
 const Insights = () => {
   return (
-    <section className={`${styles.paddings} relative z-10`}>
+    <section className={`${styles.paddings} relative z-10`} id="insights">
       <motion.div
         variants={staggerContainer}
         initial="hidden"

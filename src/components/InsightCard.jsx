@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { fadeIn } from '../utils/motion'
+import { handleScroll } from '../utils/scroll'
 
 const InsightCard = ({ imgUrl, title, subtitle, index }) => {
   return (
@@ -13,9 +14,9 @@ const InsightCard = ({ imgUrl, title, subtitle, index }) => {
                 <h4 className="lg:text-4xl text-2xl text-white">{title}</h4>
                 <p className="mt-4 lg:text-xl text-sm text-secondary">{subtitle}</p>
             </div>
-            <div className="lg:flex hidden items-center justify-center w-25 h-25 rounded-full bg-transparent border border-white">
-                <img src="/arrow.svg" alt="Arrow" className="w-[40%] h-[40%] object-contain"/>
-            </div>
+            <button onClick={() => handleScroll('#explore')} className="lg:flex hidden items-center justify-center w-25 h-25 rounded-full bg-transparent border border-white cursor-pointer group hover:scale-125 hover:bg-[#323f5d] transition-all duration-300">
+                <img src="/arrow.svg" alt="Arrow" className="w-[40%] h-[40%] object-contain group-hover:rotate-210 transition-all duration-300"/>
+            </button>
         </div>
     </motion.div>
   )
